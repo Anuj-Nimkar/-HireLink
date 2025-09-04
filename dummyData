@@ -203,19 +203,7 @@ Admin 2
 }
 
 
-// get user personal details
-GET
-localhost:4444/api/user
 
-// update user details
-PUT
-localhost:4444/api/user
-
-{
-    "name": "Roman Rollins",
-    "contactNumber": "+91-8945659878",
-    "bio": "I am a recruiter from Flipkart Inc",
-}
 
 // job application
 
