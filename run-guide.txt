@@ -1,0 +1,46 @@
+(1) cd backend; start npm install; start npm start; cd ..\frontend; rmdir /s /q node_modules; del package-lock.json; npm install --legacy-peer-deps; set NODE_OPTIONS=--openssl-legacy-provider; npm start
+
+or
+
+(2)# --- BACKEND ---
+cd backend
+echo Installing backend dependencies...
+npm install
+echo Starting backend server...
+start powershell -NoExit -Command "npm start"
+
+# --- FRONTEND ---
+cd ..\frontend
+echo Cleaning old node modules...
+rm -r node_modules
+rm package-lock.json
+echo Installing frontend dependencies...
+npm install --legacy-peer-deps
+echo Starting frontend server...
+start powershell -NoExit -Command "$env:NODE_OPTIONS='--openssl-legacy-provider'; npm start"
+
+or
+
+(3)1️⃣ Open PowerShell in your project folder
+cd D:\Test\job-portal
+
+2️⃣ Backend Setup
+cd backend
+npm install
+
+3️⃣ Start Backend
+npm start
+
+4️⃣ Frontend Setup
+
+Open a new PowerShell window or new terminal in VS Code:
+
+cd D:\Test\job-portal\frontend
+rm -r node_modules
+rm package-lock.json
+npm install --legacy-peer-deps
+
+5️⃣ Start Frontend
+
+$env:NODE_OPTIONS="--openssl-legacy-provider"
+npm start
